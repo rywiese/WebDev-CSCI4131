@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Tested Using Mozilla Firefox -->
+        <meta charset = "utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>My Schedule</title>
+        <script type="text/javascript">
+            function changeGoldy(image) {
+                document.getElementById('goldy').src = image;
+            }
+            function show(id) {
+                document.getElementById(id).style.display = 'inline';
+            }
+            function hide(id) {
+                document.getElementById(id).style.display = 'none';
+            }
+        </script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="nav"><a href="mySchedule.html" class="nav"><p> My Schedule </p></a></li>
+            <li class="nav"><a href="myPlaces.html" class="nav"><p> My Favorite Places </p></a></li>
+            <li class="nav"><a href="myForm.html" class="nav"><p> Form Input </p></a></li>
+            <li class="nav"><a href="myWidgets.html" class="nav"><p> My Widgets </p></a></li>
+        </ul>
+        <h1> My Spring 19 Schedule </h1>
+        <img id="goldy" src="images/gophers-mascot.png" alt="Goldy"/>
+        <table>
+            <tr>
+                <td class="day">Mon</td>
+                <td>Nothing Scheduled</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day">Tue</td>
+                <td onmouseover="changeGoldy('images/smith.jpg');show('t4604')" onmouseout="hide('t4604')">
+                    <p class="time">9:05 - 11:00 AM</p>
+                    <p>MATH 4604 - Smith 121</p>
+                    <img id="t4604" class="icon" src="images/smith.jpg" alt="hall"/>
+                </td>
+                <td onmouseover="changeGoldy('images/me.jpg');show('t5521')" onmouseout="hide('t5521')">
+                    <p class="time">2:30 - 3:45 PM</p>
+                    <p>CSCI 5521 - M.E. 212</p>
+                    <img id="t5521" class="icon" src="images/me.jpg" alt="hall"/>
+                </td>
+                <td onmouseover="changeGoldy('images/keller.jpg');show('4131')" onmouseout="hide('4131')">
+                    <p class="time">6:30 - 9:00 PM</p>
+                    <p>CSCI 4131 - Keller 3-210</p>
+                    <img id="4131" class="icon" src="images/keller.jpg" alt="hall"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">Wed</td>
+                <td onmouseover="changeGoldy('images/keller.jpg');show('5421')" onmouseout="hide('5421')">
+                    <p class="time">6:30 - 9:00 PM</p>
+                    <p>CSCI 5421 - Keller 3-210</p>
+                    <img id="5421" class="icon" src="images/keller.jpg" alt="hall"/>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day">Thu</td>
+                <td onmouseover="changeGoldy('images/smith.jpg');show('th4604')" onmouseout="hide('th4604')">
+                    <p class="time">9:05 - 11:00 AM</p>
+                    <p>MATH 4604 - Smith 121</p>
+                    <img id="th4604" class="icon" src="images/smith.jpg" alt="hall"/>
+                </td>
+                <td onmouseover="changeGoldy('images/cive.jpg');show('2011')" onmouseout="hide('2011')">
+                    <p class="time">1:25 - 2:15 PM</p>
+                    <p>CSCI 2011H (TA) - Civ E 212</p>
+                    <img id="2011" class="icon" src="images/cive.jpg" alt="hall"/>
+                </td>
+                <td onmouseover="changeGoldy('images/me.jpg');show('th5521')" onmouseout="hide('th5521')">
+                    <p class="time">2:30 - 3:45 PM</p>
+                    <p>CSCI 5521 - M.E. 212</p>
+                    <img id="th5521" class="icon" src="images/me.jpg" alt="hall"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">Fri</td>
+                <td onmouseover="changeGoldy('images/keller.jpg');show('meeting')" onmouseout="hide('meeting')">
+                    <p class="time">11:00 - 12:00 PM</p>
+                    <p>TA Meeting - Keller Hall</p>
+                    <img id="meeting" class="icon" src="images/keller.jpg" alt="hall"/>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day">Sat</td>
+                <td>Nothing Scheduled</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day">Sun</td>
+                <td>Nothing Scheduled</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>

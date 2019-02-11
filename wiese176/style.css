@@ -1,0 +1,156 @@
+body {
+    font-family: verdana;
+    background-color: #ffffff;
+}
+
+h1, p, td, label {
+    color: #022b3a;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1f7a8c;
+}
+
+li.nav {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 4px 24px;
+    text-decoration: none;
+    color: black;
+}
+
+li a.nav p {
+    color: white;
+}
+
+li a.nav:hover {
+    background-color: #022b3a;
+}
+
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ol li:hover {
+    background-color: #1f7a8c;
+    width: 20%;
+}
+
+ol li a:hover {
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    background-color: #bfdbf7;
+    float: left;
+}
+
+table,th,td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #e1e5f2;
+}
+
+td.day {
+    font-weight: bold;
+}
+
+td p.time {
+    font-style: italic;
+}
+
+#goldy {
+    width: 25%;
+    padding: 72px;
+}
+
+.icon {
+    width: 96px;
+    display: none;
+}
+
+.form {
+    margin: auto;
+    width: 75%;
+}
+
+.formItem {
+    margin: 24px;
+}
+
+label {
+    display: inline-block;
+    width: 25%;
+}
+
+input {
+    display: inline-block;
+}
+
+#success {
+    margin: 64px;
+}
+
+#widgetDiv {
+    margin: auto;
+    padding-top: 36px;
+    width: 75%;
+}
+
+.widget {
+}
+
+
+.twitter-timeline {
+}
+
+/* Imported from the link in the assignment */
+#container {
+    width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 90px auto;
+    border-radius: 5px;
+    height: 150px;
+    border: 2px solid gray;
+}
+#header {
+    text-align: center;
+    background-color: #1f7a8c;
+    border-radius: 5px;
+    margin: -39px -20px 10px -20px;
+}
+h2{
+    padding-top: 10px;
+    color: white;
+}
+#content {
+    margin-left: 57px;
+    margin-top: 40px;
+}
+#register label{
+    margin-right:5px;
+}
+#register input {
+    padding: 5px 14px;
+    border: 1px solid #d5d9da;
+    box-shadow: 0 0 9px #022b3a inset;
+    width: 272px;
+    font-size: 1em;
+    height: 25px;
+}

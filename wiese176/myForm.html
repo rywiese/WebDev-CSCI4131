@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Tested Using Mozilla Firefox -->
+        <meta charset = "utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Form Input</title>
+        <script type="text/javascript">
+            function validateName(name) {
+                var ok = name.search(/[a-z0-9]+$/i);
+                if(ok == 0) {
+                    return true;
+                }
+                else return false;
+            }
+            function validateForm() {
+                var nameOK = validateName(document.forms["form"]["Event Name"].value);
+                if(nameOK == false) {
+                    alert("Event Name must be alphanumeric");
+                    return false;
+                }
+                var eventOK = validateName(document.forms["form"]["Location"].value);
+                if(eventOK == false) {
+                    alert("Location must be alphanumeric");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="nav"><a href="mySchedule.html" class="nav"><p> My Schedule </p></a></li>
+            <li class="nav"><a href="myPlaces.html" class="nav"><p> My Favorite Places </p></a></li>
+            <li class="nav"><a href="myForm.html" class="nav"><p> Form Input </p></a></li>
+            <li class="nav"><a href="myWidgets.html" class="nav"><p> My Widgets </p></a></li>
+        </ul>
+        <div class="form">
+            <form name="form" method="post" onsubmit="return validateForm()" action="mySuccess.html">
+                <div class="formItem">
+                    <label>Day of the Week:</label>
+                    <select name="Day of the Week" required>
+                        <option value="">Choose</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select><br>
+                </div>
+                <div class="formItem">
+                    <label>Start Time:</label>
+                    <input type="time" name="Start Time" required><br>
+                </div>
+                <div class="formItem">
+                    <label>End Time:</label>
+                    <input type="time" name="End Time" required><br>
+                </div>
+                <div class="formItem">
+                    <label>Event Name:</label>
+                    <input type="text" name="Event Name" required><br>
+                </div>
+                <div class="formItem">
+                    <label>Location:</label>
+                    <input type="text" name="Location" required><br>
+                </div>
+                <div class="formItem">
+                    <label>Enter Picture URL:</label>
+                    <input type="url" name="url" required><br>
+                </div>
+                <div class="formItem">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
