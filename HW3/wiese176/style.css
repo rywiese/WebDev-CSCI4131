@@ -55,6 +55,7 @@ table {
     width: 60%;
     background-color: #bfdbf7;
     float: left;
+    margin-bottom: 36px;
 }
 
 table,th,td {
@@ -74,9 +75,38 @@ td p.time {
     font-style: italic;
 }
 
+.goldydiv {
+    float: right;
+    text-align: center;
+}
+
 #goldy {
-    width: 25%;
+    width: 350px;
     padding: 72px;
+}
+
+.goldydiv button {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#mapAndForm {
+    width: 90%;
+    margin: 36px auto;
+}
+
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 75%;  /* The width is the width of the web page */
+    margin-bottom: 36px;
+    float: left;
+}
+
+#mapForm {
+    width: 25%;
+    height: 400px;
+    float: right;
+    background-color: #bfdbf7;
 }
 
 .icon {
