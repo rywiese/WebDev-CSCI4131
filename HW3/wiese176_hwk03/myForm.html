@@ -5,27 +5,7 @@
         <meta charset = "utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>Form Input</title>
-        <script type="text/javascript">
-            function validateName(name) {
-                var ok = name.search(/[a-z0-9]+$/i);
-                if(ok == 0) {
-                    return true;
-                }
-                else return false;
-            }
-            function validateForm() {
-                var nameOK = validateName(document.forms["form"]["Event Name"].value);
-                if(nameOK == false) {
-                    alert("Event Name must be alphanumeric");
-                    return false;
-                }
-                var eventOK = validateName(document.forms["form"]["Location"].value);
-                if(eventOK == false) {
-                    alert("Location must be alphanumeric");
-                    return false;
-                }
-            }
-        </script>
+        <script src="formScript.js"></script>
     </head>
     <body>
         <ul class="nav">
@@ -63,7 +43,7 @@
                 </div>
                 <div class="formItem">
                     <label>Location:</label>
-                    <input type="text" name="Location" required><br>
+                    <input id="formLocation" type="text" name="Location" required><br>
                 </div>
                 <div class="formItem">
                     <label>Enter Picture URL:</label>
@@ -74,5 +54,17 @@
                 </div>
             </form>
         </div>
+        <div id="formMap"></div>
+        <script>
+            <span class="metadata-marker" style="display: none;" data-region_tag="script-body"></span>// Initialize and add the map
+        </script>
+        <!--Load the API from the specified URL
+        * The async attribute allows the browser to render the page while the API loads
+        * The key parameter will contain your own API key (which is not needed for this tutorial)
+        * The callback parameter executes the initMap() function
+        -->
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdXpfv5YphbZSLjWMvnnje6WCNDRg5iS0&libraries=places&callback=initMap">
+        </script>
     </body>
 </html>

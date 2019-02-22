@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <!-- Tested Using Mozilla Firefox -->
+        <meta charset = "utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>My Schedule</title>
+        <script src="scheduleScript.js"></script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="nav"><a href="mySchedule.html" class="nav"><p> My Schedule </p></a></li>
+            <li class="nav"><a href="myPlaces.html" class="nav"><p> My Favorite Places </p></a></li>
+            <li class="nav"><a href="myForm.html" class="nav"><p> Form Input </p></a></li>
+            <li class="nav"><a href="myWidgets.html" class="nav"><p> My Widgets </p></a></li>
+        </ul>
+
+        <h1 id='head'> My Spring 19 Schedule </h1>
+        <div style="width:100%">
+            <div class="goldydiv">
+                <img id="goldy" src="images/gophers-mascot.png" alt="Goldy"/>
+                <br>
+                <button onclick="startSlideshow()">Start</button>
+                <button onclick="stopSlideshow()">Stop</button>
+            </div>
+            <table>
+                <tr>
+                    <td class="day">Mon</td>
+                    <td>Nothing Scheduled</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="day">Tue</td>
+                    <td id='smith' onmouseover="show('t4604')" onmouseout="hide('t4604')">
+                        <p class="time">9:05 - 11:00 AM</p>
+                        <p class='eventName'>MATH 4604 - Smith 121</p>
+                        <p class='address'>207 Pleasant St SE, Minneapolis, MN 55455</p>
+                        <img id="t4604" class="icon" src="images/smith.jpg" alt="hall"/>
+                    </td>
+                    <td id='me' onmouseover="show('t5521')" onmouseout="hide('t5521')">
+                        <p class="time">2:30 - 3:45 PM</p>
+                        <p class='eventName'>CSCI 5521 - M.E. 212</p>
+                        <p class='address'>111 Church St SE, Minneapolis, MN 55455</p>
+                        <img id="t5521" class="icon" src="images/me.jpg" alt="hall"/>
+                    </td>
+                    <td id='keller' onmouseover="show('4131')" onmouseout="hide('4131')">
+                        <p class="time">6:30 - 9:00 PM</p>
+                        <p class='eventName'>CSCI 4131 - Keller 3-210</p>
+                        <p class='address'>200 Union St SE, Minneapolis, MN 55455</p>
+                        <img id="4131" class="icon" src="images/keller.jpg" alt="hall"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day">Wed</td>
+                    <td onmouseover="show('5421')" onmouseout="hide('5421')">
+                        <p class="time">6:30 - 9:00 PM</p>
+                        <p>CSCI 5421 - Keller 3-210</p>
+                        <p>200 Union St SE, Minneapolis, MN 55455</p>
+                        <img id="5421" class="icon" src="images/keller.jpg" alt="hall"/>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="day">Thu</td>
+                    <td onmouseover="show('th4604')" onmouseout="hide('th4604')">
+                        <p class="time">9:05 - 11:00 AM</p>
+                        <p>MATH 4604 - Smith 121</p>
+                        <p>207 Pleasant St SE, Minneapolis, MN 55455</p>
+                        <img id="th4604" class="icon" src="images/smith.jpg" alt="hall"/>
+                    </td>
+                    <td id='cive' onmouseover="show('2011')" onmouseout="hide('2011')">
+                        <p class="time">1:25 - 2:15 PM</p>
+                        <p class='eventName'>CSCI 2011H (TA) - Civ E 212</p>
+                        <p class='address'>500 Pillsbury Dr SE, Minneapolis, MN 55455</p>
+                        <img id="2011" class="icon" src="images/cive.jpg" alt="hall"/>
+                    </td>
+                    <td onmouseover="show('th5521')" onmouseout="hide('th5521')">
+                        <p class="time">2:30 - 3:45 PM</p>
+                        <p>CSCI 5521 - M.E. 212</p>
+                        <p>111 Church St SE, Minneapolis, MN 55455</p>
+                        <img id="th5521" class="icon" src="images/me.jpg" alt="hall"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day">Fri</td>
+                    <td onmouseover="show('meeting')" onmouseout="hide('meeting')">
+                        <p class="time">11:00 - 12:00 PM</p>
+                        <p>TA Meeting - Keller Hall</p>
+                        <p>200 Union St SE, Minneapolis, MN 55455</p>
+                        <img id="meeting" class="icon" src="images/keller.jpg" alt="hall"/>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="day">Sat</td>
+                    <td>Nothing Scheduled</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="day">Sun</td>
+                    <td>Nothing Scheduled</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id='mapAndForm'>
+            <div id="dirList">
+            </div>
+            <div id="map"></div>
+            <div class='form' id="mapForm" >
+                <form name='mapForm' method='post' onsubmit="search();return false;">
+                    <div class='formItem'>
+                        <label>Find:</label>
+                        <select id="findSelect" name="findSelect" onchange="itemSelected();">
+                            <option value="restaurant">Restaurant</option>
+                            <option value="hospital">Hospital</option>
+                            <option value="parking">Parking</option>
+                            <option value="library">Library</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input id='findInput' type='text' placeholder="Enter a keyword" disabled>
+                    </div>
+                    <div class="formItem">
+                        <label>within:</label>
+                        <input id='findMeters' type='text' value=500 required>
+                        <label>meters</label>
+                    </div>
+                    <div class="formItem">
+                        <label></label>
+                        <input type='submit' value='Search'>
+                    </div>
+                </form>
+                <br>
+                <form name='dirForm' method='post' onsubmit="directions();return false;">
+                    <div class="formItem">
+                        <label>Destination:</label>
+                        <input id="destination" type="text" required>
+                    </div>
+                    <div class="formItem">
+                        <label>By:</label><input id="walkRadio" type="radio" name="trans" value="WALKING" checked>Walk<br>
+                        <label></label><input id="driveRadio" type="radio" name="trans" value="DRIVING">Drive<br>
+                        <label></label><input id="transRadio" type="radio" name="trans" value="TRANSIT">Transit
+                    </div>
+                    <div class="formItem">
+                        <label></label>
+                        <input type="submit" value="Go">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="bottomOfScreen"><p> </p></div>
+        <script>
+            <span class="metadata-marker" style="display: none;" data-region_tag="script-body"></span>// Initialize and add the map
+        </script>
+        <!--Load the API from the specified URL
+        * The async attribute allows the browser to render the page while the API loads
+        * The key parameter will contain your own API key (which is not needed for this tutorial)
+        * The callback parameter executes the initMap() function
+        -->
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=MYKEY&libraries=places&callback=initMap">
+        </script>
+    </body>
+</html>
